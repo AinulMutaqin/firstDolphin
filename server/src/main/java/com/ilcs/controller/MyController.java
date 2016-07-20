@@ -36,7 +36,7 @@ public class MyController {
         // a look a the client implementation you will see that the value property is bound to an input field. By doing
         // so the observer that is defined here will automatically be called when the user types text in the input on the client
         
-    	//model.firstValueProperty().onChanged(e -> System.out.println("VALUE CHANGED FROM " + e.getOldValue() + " TO " + e.getNewValue()));
+    	//model.valueProperty().onChanged(e -> System.out.println("VALUE CHANGED FROM " + e.getOldValue() + " TO " + e.getNewValue()));
     	model.firstValueProperty().onChanged(e -> calc());
     	model.secondValueProperty().onChanged(e -> calc());
     }
@@ -49,6 +49,7 @@ public class MyController {
      */
     @DolphinAction
     public void reset() {
+		//model.setValue(null);
         model.setFirstValue(null);
         model.setSecondValue(null);
         model.setResultValue(null);
